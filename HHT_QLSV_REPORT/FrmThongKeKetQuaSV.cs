@@ -63,7 +63,12 @@ namespace HHT_QLSV_REPORT
 
         private void cmbMonHoc_SelectedValueChanged(object sender, EventArgs e)
         {
-            btnBaoCao.PerformClick();
+            HienThiThongKeDiemSV();
+        }
+
+        private void txtHoTen_TextChanged(object sender, EventArgs e)
+        {
+            HienThiThongKeDiemSV();
         }
     }
 }

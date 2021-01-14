@@ -44,6 +44,7 @@ namespace HHT_QLSV_REPORT
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(269, 36);
             this.txtHoTen.TabIndex = 0;
+            this.txtHoTen.TextChanged += new System.EventHandler(this.txtHoTen_TextChanged);
             this.txtHoTen.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtHoTen_KeyDown);
             // 
             // label1
