@@ -18,8 +18,16 @@ namespace HHT_QLSV_REPORT
 
         private void FrmThongKeKetQuaSV_Load(object sender, EventArgs e)
         {
+            List<MonHoc> listMH = db.MonHocs.ToList();
             HienThiThongKeDiemSV();
-            //this.rpvThongKeDiem.RefreshReport();
+            FillCmbMonHoc(listMH);
+        }
+
+        private void FillCmbMonHoc(List<MonHoc> listMH)
+        {
+            this.cmbMonHoc.DataSource = listMH;
+            this.cmbMonHoc.DisplayMember = "TenMH";
+            this.cmbMonHoc.ValueMember = "MaMH";
         }
 
         private void HienThiThongKeDiemSV()
@@ -30,7 +38,7 @@ namespace HHT_QLSV_REPORT
             List<ThongKeDiem> list = db.Database.SqlQuery<ThongKeDiem>(truyVanSQL).ToList();
             if (txtHoTen.Text != "")
             {
-                list = list.Where(x => x.TenSV.ToLower() == txtHoTen.Text.ToLower()).ToList();
+                list = list.Where(x => x.TenSV.ToLower() == txtHoTen.Text.ToLower() && x.TenMH == cmbMonHoc.Text).ToList();
             }
             this.rpvThongKeDiem.LocalReport.ReportPath = "ReportKetQuaSV.rdlc";
             var reportDataSource = new ReportDataSource("ThongKeDiemDataset", list);
@@ -48,7 +56,14 @@ namespace HHT_QLSV_REPORT
         private void txtHoTen_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
+            {
                 btnBaoCao.PerformClick();
+            }
+        }
+
+        private void cmbMonHoc_SelectedValueChanged(object sender, EventArgs e)
+        {
+            btnBaoCao.PerformClick();
         }
     }
 }
