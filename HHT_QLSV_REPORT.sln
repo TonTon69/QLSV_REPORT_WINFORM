@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HHT_QLSV_REPORT", "HHT_QLSV_REPORT\HHT_QLSV_REPORT.csproj", "{B706325E-D26F-42DC-BA8F-019A7D298CB9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B706325E-D26F-42DC-BA8F-019A7D298CB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B706325E-D26F-42DC-BA8F-019A7D298CB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B706325E-D26F-42DC-BA8F-019A7D298CB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B706325E-D26F-42DC-BA8F-019A7D298CB9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {17286AFD-C5C0-4962-A132-3A5FB65DB3CF}
+	EndGlobalSection
+EndGlobal
