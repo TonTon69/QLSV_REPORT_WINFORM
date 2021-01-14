@@ -21,6 +21,7 @@ namespace HHT_QLSV_REPORT
             List<MonHoc> listMH = db.MonHocs.ToList();
             HienThiThongKeDiemSV();
             FillCmbMonHoc(listMH);
+            this.cmbMonHoc.SelectedIndex = -1;
         }
 
         private void FillCmbMonHoc(List<MonHoc> listMH)
@@ -38,7 +39,11 @@ namespace HHT_QLSV_REPORT
             List<ThongKeDiem> list = db.Database.SqlQuery<ThongKeDiem>(truyVanSQL).ToList();
             if (txtHoTen.Text != "")
             {
-                list = list.Where(x => x.TenSV.ToLower() == txtHoTen.Text.ToLower() && x.TenMH == cmbMonHoc.Text).ToList();
+                list = list.Where(x => x.TenSV.ToLower() == txtHoTen.Text.ToLower()).ToList();
+            }
+            if (cmbMonHoc.SelectedIndex >= 0)
+            {
+                list = list.Where(x => x.TenMH == cmbMonHoc.Text).ToList();
             }
             this.rpvThongKeDiem.LocalReport.ReportPath = "ReportKetQuaSV.rdlc";
             var reportDataSource = new ReportDataSource("ThongKeDiemDataset", list);
